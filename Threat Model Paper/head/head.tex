@@ -1,0 +1,38 @@
+% bring in the individual header files
+
+\input{head/bbhead}
+\input{head/lrhead}
+\input{head/vecmathead}
+%\input{head/thmhead}
+\input{head/comphead}
+\input{head/crypthead}
+
+\newcommand{\etal}{\textit{et al.}}
+
+\renewcommand{\cal}[1]{\mathcal{#1}}
+
+% show equation numbers only for referenced equations
+\mathtoolsset{showonlyrefs}
+
+% register commands for author(s)
+
+\FXRegisterAuthor{s}{ed}{Sikhar}
+\FXRegisterAuthor{h}{eh}{\color{blue}Hart}
+\FXRegisterAuthor{n}{en}{\color{red}Navid}
+\fxusetheme{color}
+
+% fix weird spacing of \pmod, and introduce \pmod* command; see
+% http://tex.stackexchange.com/questions/39221/removing-extra-space-with-pmod-command
+\makeatletter
+\renewcommand{\pod}[1]{\mathchoice
+  {\allowbreak \if@display \mkern 18mu\else \mkern 8mu\fi (#1)}
+  {\allowbreak \if@display \mkern 18mu\else \mkern 8mu\fi (#1)}
+  {\mkern4mu(#1)}
+  {\mkern4mu(#1)}
+}
+\makeatletter
+\let\@@pmod\pmod
+\DeclareRobustCommand{\pmod}{\@ifstar\@pmods\@@pmod}
+\def\@pmods#1{\mkern4mu({\operator@font mod}\mkern 6mu#1)}
+\makeatother
+%%%% 

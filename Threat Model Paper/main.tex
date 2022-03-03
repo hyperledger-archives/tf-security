@@ -1,0 +1,85 @@
+%\newif\iflncs\lncsfalse
+%\newif\iffull\fulltrue
+
+\documentclass{llncs}
+\pagestyle{plain}
+%% Save the class definition of \subparagraph
+\let\llncssubparagraph\subparagraph
+%%% Provide a definition to \subparagraph to keep titlesec happy
+\let\subparagraph\paragraph
+%\usepackage{times}
+%\usepackage{fullpage}
+\usepackage{perpage}
+\MakePerPage{footnote}
+\usepackage{hyperref,microtype}
+%\usepackage{amsmath,amsfonts,amssymb}
+%\usepackage[amsmath,thmmarks,hyperref]{ntheorem}
+%\usepackage{mathtools}
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+\usepackage{float}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{enumitem}
+\usepackage{titlesec}
+%\setcounter{secnumdepth}{4}
+% remove "draft" to turn off fixme notes
+\usepackage[multiuser,inline,nomargin,marginclue]{fixme}
+\usepackage{framed} 
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{boxedminipage}
+\usepackage{tikz-cd} 
+\usepackage{multirow}
+
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize}
+
+\newenvironment{boxedalgo}
+{\begin{center}\begin{boxedminipage}{\textwidth}}
+		{\end{boxedminipage}\end{center}}
+
+\hypersetup
+{
+	colorlinks = true,
+	citecolor = [rgb]{0.1,0.13,0.53},
+	linkcolor = [rgb]{0.5,0.01,0.13}
+}
+
+\input{head/head}
+
+\newcommand{\smallmat}[1]{\parens*{\begin{smallmatrix} #1 \end{smallmatrix}}}
+
+%%%%
+
+\begin{document}
+	
+	\title{A Discussion on Hyperledger Security}
+%	\title{A Computational Category-Theoretic Approach to Cryptography}
+	
+	\author{%
+	Hyperledger Security Task Force
+	}
+	\institute{}
+
+		
+	\maketitle
+	\thispagestyle{empty} % Suppress title page number
+
+	\begin{abstract}
+		\input{abstract}
+	\end{abstract}
+
+%	\clearpage
+%	\pagenumbering{arabic} % Start page numbering after title page.
+
+	\input{initial}
+
+	\bibliographystyle{alpha}
+	\bibliography{abbrev3,crypto,cryptoalt,other,category}
+	
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
