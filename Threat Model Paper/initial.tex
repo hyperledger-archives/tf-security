@@ -1,3 +1,42 @@
 %!TEX root = ./main.tex
 
-We first
+Computer security usually is defined for \emph{static} things like a piece of code, a system, or a cryptographic algorithm.  In these cases, there are known ways to define and model security.  However, in this work, we want to think about security for an \emph{active development process} rather than any fixed piece of software.  To our knowledge, this has not been extensively studied before.  \textcolor{red}{Hart:  we need to figure out related work in this area.}
+
+How can we define security for an open-source ecosystem?  It's not so simple.  We can borrow from standard practices where we can, and we will include things like typical threat model practices and cryptographic-style game-based definitions.  We will discuss these things in more detail, and what we think that a reasonable adversarial model is for a development ecosystem.  However, before we do this, we think it will be useful to discuss some basic thread modeling.  In particular, subdividing the security issues we face into different categories may make it easier to think about the problem.
+
+\section{Categories of Security}
+Let's try to think about some categories of security.  We'll start from ``big'' to ``small.''
+
+\paragraph{Infrastructure Security.}  The widest, in some sense, type of security we can think about is infrasctructural security.  If we ignore most facets about the code itself, do we have a secure infrastructure.  This type of security might include things like the following:
+\begin{itemize}
+\item Making sure packages and release are signed and cannot be tampered with by an adversary.
+\item Ensuring that account compromise cannot be used to create exploits.
+\item Handling potentially malicious developers.
+\item Considering third party infrastructure services on which we rely extensively (e.g. Github) and what happens if they have security issues.
+\end{itemize}
+Note that most things that are \emph{explicitly about the code of projects} are out of scope of infrastructure.  As a good metric, if there is an issue that multiple different types of project have (including projects that aren't necessarily focused on security-critical applications), then it's probably related to infrastructure.
+
+\paragraph{Architectural Security.}  Now we can move to project-specific (or code-specific) security.  Architectural security basically asks the question as to whether or not the systems are designed correctly.
+\begin{itemize}
+\item Are blockchains designed in ways that are inherently secure?
+\item Are good cryptographic algorithms (peer-reviewed and designed well) being used?  Are they being used appropriately and in the right context?
+\item Are proper consensus algorithms being used (and with proper guarantees--we cannot advertise byzantine fault tolerance when crash fault tolerant algorithms are being used)?
+\item If privacy properties are being suggested, does the system (if implemented correctly) have them?
+\item Are critical smart contracts designed in a fundamentally safe way?
+\item Architectural security also involves formalizing the explicit guarantees of the system so that users can utilize the system correctly and in ways that preserve the privacy and security properties they desire.  A system that says it ``preserves privacy'' without explicit requirements or definitions is not something that is architecturally secure (at least with respect to privacy)!
+\item In many applications, architectural security doesn't play a huge role.  But it is critical for blockchain!
+\end{itemize}
+
+\paragraph{Implementation Security.}  When people think of security, they generally think of implementation security.  The main question here is ``is the architecture we designed implemented correctly?''  This encompasses many of the things that we typically associate with security:
+\begin{itemize}
+\item Most of the automated security tools check various aspects of implementation security.
+\item Typical things that cause large and well-known bugs are implementation security issues.  If something is a ``bug'' then it is probably a implementation security issue; if it is a ``design flaw'' then it is probably an architectural security issue.
+\item The recent log4j bug/security breach is a now-classic example of implementation security.
+\end{itemize}
+
+\section{Steps Forward}
+What should be our initial steps?  
+
+\medskip
+
+\noindent Before we go further, it's probably useful to make sure that everyone agrees on the categories of security that we have defined in the above section.  Please don't take the above divisions as gospel:  if you have a better way to do this (and it's very possible that there are better ways to classify security issues), then please suggest it!
