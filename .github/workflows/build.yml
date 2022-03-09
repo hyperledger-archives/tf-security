@@ -1,0 +1,24 @@
+name: Build and archive TeX
+on:
+  push:
+  workflow_dispatch:
+  
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@latest
+        with:
+          working_directory: ThreatModelPaper/
+          root_file: main.tex
+          extra_system_packages: python3-pygments
+          args: "-pdf -latexoption=-shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode"
+      - name: Add PDF
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: ThreatModelPaper
+          path: ThreatModelPaper/main.pdf
