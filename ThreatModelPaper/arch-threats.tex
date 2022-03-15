@@ -1,0 +1,12 @@
+%!TEX root = ./main.tex
+
+\section{Architectural Threats}
+We now move to architectural threats.
+
+\paragraph{Poorly Designed Consensus Algorithms.}  Blockchains could use consensus algorithms that are improperly vetted.  Perhaps performance degrades under adversarial circumstances, or even safety or liveness totally break.
+
+\paragraph{Self-Invented Cryptography.}  Developers could attempt their own cryptographic algorithms.  While developers don't usually try to build things from scratch, they often try to ``optimize'' or ``extend'' things that break the scheme.  These things have happened multiple times in the HLF.
+
+\paragraph{Academic Work is Broken.}  We could be affected by major design flaws in existing work that we implement.  
+
+\paragraph{Poor Definitions.}  What do privacy and confidentiality on a blockchain mean anyway?  If they aren't defined rigorously, chances are any suggestions of privacy and confidentiality are meaningless.  Even if they are well-defined, the guarantees can sometimes be meaningless when looked at closely.  We need consistent, clear definitions of security.

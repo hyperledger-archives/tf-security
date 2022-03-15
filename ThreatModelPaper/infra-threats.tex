@@ -1,0 +1,11 @@
+%!TEX root = ./main.tex
+
+\section{Infrastructure Threats}
+
+In this section, we begin by listing some infrastructural threats.  Note that \emph{most of these threats are common to many open source projects}.  This does not mean we should not care about or list them:  we need to be on the vanguard of security.  We need to be able to weight these threats appropriately and figure out how we should spend our security resources (cash and people's time). \textcolor{red}{Hart: we aren't even doing some of these correctly.}
+
+\paragraph{Malicious Developer.}  A malicous adversary begins contributing to some code but eventually puts in backdoors for future system compromises.
+
+\paragraph{Software Delivery MitM.}  An adversary figures out a way to convince third parties to accept malicious software packages as valid Hyperledger software.
+
+\paragraph{Upstream Bugs.}  We could be affected by bugs in software that we use (e.g. heartbleed~\cite{durumeric2014matter} if we had consumed OpenSSL at the time).
