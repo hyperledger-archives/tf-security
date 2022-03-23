@@ -8,4 +8,16 @@ In this section, we begin by listing some infrastructural threats.  Note that \e
 
 \paragraph{Software Delivery MitM.}  An adversary figures out a way to convince third parties to accept malicious software packages as valid Hyperledger software.
 
-\paragraph{Upstream Bugs.}  We could be affected by bugs in software that we use (e.g. heartbleed~\cite{durumeric2014matter} if we had consumed OpenSSL at the time).
+\paragraph{Upstream Bugs.}  We could be affected by bugs in software that we use (e.g. heartbleed~\cite{durumeric2014matter} if we had consumed OpenSSL at the time). \textcolor{red}{Arun: are you intending to say the bugs in software packages one chooses in the infrastructure?}
+
+\paragraph{Compromised Software Build Process.}  This could occur due to improper user access management or misconfigurations.
+
+\paragraph{Leaked Credentials.} Developers unintentionally leave behind traces of secrets and commit them on a source code version control systems such as GitHub.
+
+\paragraph{Improper Examples.} Developers who are new will refer to the open-source available sample codebase to implement and get their solution to production. The examples do not call out security risks.
+
+\paragraph{Insufficient Testbed Setup.} Complex scenarios demand hardware resources that is not available at the moment, however an adversary with unlimited resource can be ahead in time.
+
+\paragraph{Misusing Privileged Access.} Principle of least privilege should be followed, otherwise having extra access could lead to compromising a majority of the system.
+
+\paragraph{Anonymous Access.} Sometimes the adversary is just interested in eiter denial of service or wants to misuse the resources available for anonymous users.
