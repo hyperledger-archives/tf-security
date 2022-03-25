@@ -21,3 +21,10 @@ In this section, we begin by listing some infrastructural threats.  Note that \e
 \paragraph{Misusing Privileged Access.} Principle of least privilege should be followed, otherwise having extra access could lead to compromising a majority of the system.
 
 \paragraph{Anonymous Access.} Sometimes the adversary is just interested in eiter denial of service or wants to misuse the resources available for anonymous users.
+
+\paragraph{Chain Split or Halt}  This is an attack against the operational state of the network, where the side effects of an unhealthy system are valuable to the attacker.
+A malicious attacker could use a bug or other aspect of the system to cause the network to split into multiple networks and stay split.
+An alternate form would be to cause a network to stop, removing enough participants so the chain will not advance.
+These attacks can be temporary or permanent.
+A temporary split can still allow other systems depending on the network to produce incorrect behaviour if they are obseving a state that is later abandoned.
+In extreme cases the temporary split may continue for long enough that the split network will form two independent networks.
