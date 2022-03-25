@@ -10,3 +10,13 @@ We now move to architectural threats.
 \paragraph{Academic Work is Broken.}  We could be affected by major design flaws in existing work that we implement.  
 
 \paragraph{Poor Definitions.}  What do privacy and confidentiality on a blockchain mean anyway?  If they aren't defined rigorously, chances are any suggestions of privacy and confidentiality are meaningless.  Even if they are well-defined, the guarantees can sometimes be meaningless when looked at closely.  We need consistent, clear definitions of security.
+
+\paragraph{Conformance for Blockchain.}  Another area that needs definition is integrity protection of generated blockchain for immutability.
+
+\paragraph{Network Secrecy.}  Adversary can capitalize on insecure connection across components. Note that using tcp connections, merely sending a byte array, encoding the data before transmission are not security measures.
+
+\paragraph{Network Availability.}  Adversary could intend to break the normal operations of the system through unwanted traffic sent to the network or blocking subset of communication flows.
+
+\paragraph{Key Management.}  Private and/or Secret Keys play a critical role in protecting the sanctity of whole blockchain network. Improper key management, leaving these behind in a temporary storage, persistenting them in plain text would open up attack surface for an adversary.
+
+\paragraph{Expired Credentials.}  Adversary can utilize the permissions granted to an expired identity to gain access of the whole or part of the system.
