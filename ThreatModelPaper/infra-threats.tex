@@ -4,7 +4,7 @@
 
 In this section, we begin by listing some infrastructural threats.  Note that \emph{most of these threats are common to many open source projects}.  This does not mean we should not care about or list them:  we need to be on the vanguard of security.  We need to be able to weight these threats appropriately and figure out how we should spend our security resources (cash and people's time). \textcolor{red}{Hart: we aren't even doing some of these correctly.}
 
-\paragraph{Malicious Developer.}  A malicous adversary begins contributing to some code but eventually puts in backdoors for future system compromises.
+\paragraph{Malicious Developer.}  A malicious adversary begins contributing to some code but eventually puts in backdoors for future system compromises.
 
 \paragraph{Software Delivery MitM.}  An adversary figures out a way to convince third parties to accept malicious software packages as valid Hyperledger software.
 
@@ -20,11 +20,11 @@ In this section, we begin by listing some infrastructural threats.  Note that \e
 
 \paragraph{Misusing Privileged Access.} Principle of least privilege should be followed, otherwise having extra access could lead to compromising a majority of the system.
 
-\paragraph{Anonymous Access.} Sometimes the adversary is just interested in eiter denial of service or wants to misuse the resources available for anonymous users.
+\paragraph{Anonymous Access.} Sometimes the adversary is just interested in either denial of service or wants to misuse the resources available for anonymous users.
 
 \paragraph{Chain Split or Halt}  This is an attack against the operational state of the network, where the side effects of an unhealthy system are valuable to the attacker.
 A malicious attacker could use a bug or other aspect of the system to cause the network to split into multiple networks and stay split.
 An alternate form would be to cause a network to stop, removing enough participants so the chain will not advance.
 These attacks can be temporary or permanent.
-A temporary split can still allow other systems depending on the network to produce incorrect behaviour if they are obseving a state that is later abandoned.
+A temporary split can still allow other systems depending on the network to produce incorrect behaviour if they are observing a state that is later abandoned.
 In extreme cases the temporary split may continue for long enough that the split network will form two independent networks.
